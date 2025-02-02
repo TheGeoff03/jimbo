@@ -16,7 +16,8 @@ while cap.isOpened():
     results = model(frame)
 
     # Annotate the frame with detection results
-    annotated_frame = results[0].plot()
+    for result in results:
+        annotated_frame = result.plot()
 
     # Display the annotated frame
     cv2.imshow("YOLOv11 Detection", annotated_frame)
